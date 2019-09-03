@@ -39,7 +39,7 @@ class SeekBar extends Component {
   render() {
     const { className, style, media } = this.props
     const { duration, currentTime } = media
-    const valueDuration = duration ? duration : 0;
+    const valueDuration = duration ? duration : 1;
 
     return (
       <input
@@ -52,7 +52,7 @@ class SeekBar extends Component {
         onChange={this._handleChange}
         className={className}
         style={{
-          backgroundSize: currentTime * 100 / (valueDuration === 0 ? 1 : valueDuration ) + '% 100%',
+          backgroundSize: currentTime * 100 / (valueDuration) + '% 100%',
           ...style,
         }}
       />
